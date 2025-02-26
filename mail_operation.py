@@ -1,4 +1,5 @@
 import smtplib as sm
+import ssl
 
 
 def send_mail(message):
@@ -10,6 +11,8 @@ def send_mail(message):
     password = "keclcdxkdvtmwafd"
     #message = "SMTP check"
 
-    with sm.SMTP_SSL(host,port) as server:
+    context = ssl.create_default_context()
+
+    with sm.SMTP_SSL(host,port,context = context) as server:
         server.login(usermail,password)
         server.sendmail(usermail,recipient_mail,message)

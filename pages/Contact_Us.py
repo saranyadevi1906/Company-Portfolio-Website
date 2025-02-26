@@ -2,12 +2,12 @@ import streamlit as st
 from mail_operation import send_mail
 import pandas
 
-"""
-topics = []
-data = pandas.read_csv("topics.csv")
-for index,item in data.iterrows():
-    topics.append(item["topic"])
-"""
+
+#topics = []
+#data = pandas.read_csv("topics.csv")
+#for index,item in data.iterrows():
+#    topics.append(item["topic"])
+
 
 data = pandas.read_csv("topics.csv")
 with st.form(key = "my_form"):
